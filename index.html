@@ -1,10 +1,243 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="user-scalable=no,initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            var current = "main"
+            $(document).ready(function(){
+                $("#button").click(function(){$(".navigation").toggleClass("view")})
+            
+                $(".na1").click(function(){
+                    
+                    if(current !="main"){
+                        if(current == "game"){$(".game").toggleClass("view2")}
+                        if(current == "sch"){$(".schedule").toggleClass("view2")}
+                        $(".main").toggleClass("view2")
 
+                        current = "main"
+                    }
+                })
+                $(".na2").click(function(){
+                    
+                    if(current !="game"){
+                        if(current == "sch"){$(".schedule").toggleClass("view2")}
+                        else{$(".main").toggleClass("view2")}
+                        $(".game").toggleClass("view2")
+
+                        current = "game"
+                    }
+                })
+                $(".na3").click(function(){
+                    if(current != "sch"){
+                        if(current == "game"){$(".game").toggleClass("view2")}
+                        else{$(".main").toggleClass("view2")}
+                        $(".schedule").toggleClass("view2")
+
+                        current = "sch"
+                    }
+                })
+            })
+        </script>
+        <style>
+            @media screen and (min-width: 700px){
+                body{padding-top: 100px; padding-bottom: 80px; height: 800px;}
+                div > button{display: none;}
+                .top{width: 100%; height: 100px; top: 0; position: fixed; background-color: white; z-index: 100;}
+                .navigation > div{display: inline-block; height: 20px; margin-left:20px ;margin-right: 20px;}
+                .name{display: inline-block; position: absolute; top: 50px; font-size: 30px; font-weight: 900; left: 50px;}
+                .navigation{display: inline-block; right: 20px; position: absolute; top: 70px;  height: 20px; }
+                .face{height: 300px; position: relative; left: 15%; top: 20%; }
+                .main{height: 400px;}
+                .introduce{position: relative; left: 50%;top: -48%; font-weight: 900;}
+                .theBody{width: 40%;  position: relative; left: 50%; top: -47%; font-size: large;}
+                .view2{display: none;}
+                .history{font-weight: 900; font-size: larger;}
+                .game{position: relative; top: 10%; margin-left: 100px; margin-right: 100px;}
+                .ca{margin-left: 80px; margin-top: 5px;}
+                .gameName{font-size: large; font-family: 800; margin-left: -30px;}
+                table{width: 80%; height: 50%; text-align: center; left: 10%; position: relative; top: 50px;}
+                th{width: 100px;}
+                td{height: 80px;}
+            }
+            @media screen and (max-width: 699.90px ) {
+                body{padding-top: 150px; padding-bottom: 80px; height: 800px;}
+                .top{width: 100%; height: 100px; top: 0; position: fixed; background-color: white; z-index: 100;}
+                .name{display: inline-block; position:absolute;  font-size: 25px; font-weight: 900; top: 15px;left: 10px; 
+                height: 35px;}
+                .navigation > div{ height: 20px;  margin-bottom: 10px; margin-left: 5%;}
+                #button{position: absolute; right: 10%; top: 15px; height: 35px; width: 40px;}
+                .navigation{display: inline-block;  position: absolute;  top: 70px;  height: 100px; width: 100%;  background-color: white;}
+                .view{display: none;}
+                .face{position: relative;width: 50%; left: 25%;}
+                .introduce{font-weight: 900;}
+                .view2{display: none;}
+                .history{font-weight: 900; font-size: larger;}
+                .gameName{font-size: large; font-family: 800; margin-left: -30px;}
+                .ca{margin-left: 50px; margin-top: 5px;}
+                table{width: 80%; height: 50%; text-align: center; left: 8%; position: relative; top: 50px;}
+                th{width: 50px;}
+                td{height: 30px;}
+
+            }
+
+        </style>
     </head>
     <body>
-        <h1>가나다라</h1>
-        <img src="./1.jpg">
+        <div class="top">
+            <div class="name">dohyeok Kim</div>
+            <button id="button">----------</button>
+            <div class="navigation view">
+                
+                <div class="na1">Home</div>
+                <div class="na2">Game history</div>
+                <div class="na3">Schedule</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <img src="./1.jpg" class="face" >
+            <div class="introduce">
+                Introduce myself
+            </div>
+            <div class="theBody">
+            I am currently a student in the department of computer engineering at Kangwon National University. 
+            The available languages are java, c, c++, etc., and the main language is java
+            I enjoy exploring restaurants and playing board games as a hobby
+            
+            </div>
+        </div>
+        <div class="game view2">
+            <div class="history">Game history</div>
+            <div class="ca">
+                <div class="gameName">1.League of legend</div>
+                <div>Game id - ehgur#KR1</div>
+                <div>Lv - 342</div>
+                <div>Play time - 3,027h</div>
+                <div>Best tier - Gold</div>
+                <div>Most champ - Lux</div>
+                <div>Short explanation - I've been playing this game since 2018 
+                    It's one of my most played games</div>
+
+            </div>
+            <div class="ca">
+                <div class="gameName">2.OverWatch</div>
+                <div>Game id = kdh28#31858</div>
+                <div>Lv - about 356</div>
+                <div>Play time - about 1000h</div>
+                <div>Best tier - gold</div>
+                <div>Most champ - Brigitte Lindholm</div>
+                <div>Short explanation - I've been playing this game since I was a freshman in middle school, 
+                    but my account disappeared, so I haven't played for a while</div>
+            </div>
+            <div class="ca">
+                <div class="gameName">3.StarCraft</div>
+                <div>Game id - kdh28#31858</div>
+                <div>Play time - about 400h</div>
+                <div>Main tribe - Protoss</div>
+                <div>Short explanation - This is my first computer game and I still enjoy it often</div>
+
+            </div>
+            <div class="ca">
+                <div class="gameName">4.Grand Theft Auto V</div>
+                <div>Game id - kdh28</div>
+                <div>Play time - 342h</div>
+                <div>Lv - 198</div>
+                <div>Short explanation - It is the most interesting game I played in high school</div>
+            </div>
+        </div>
+        <div class="schedule view2">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                    </tr>
+                </thead>
+
+                <tbody>                
+                    
+                    <td>1교시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>2교시</td>
+                    <td rowspan="2">자료구조</td>
+                    <td rowspan="3">스포츠와 건강</td>
+                    <td></td>
+                    <td rowspan="2">자료구조</td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>3교시</td>
+                    <td></td>
+                    <td></td>
+
+
+                </tr>
+                <tr>
+                    <td>4교시</td>
+                    <td rowspan="2">선형대 수학</td>
+                    <td></td>
+                    <td rowspan="2">선형대 수학</td>
+                    <td></td>
+
+
+                </tr>
+                <tr>
+                    <td>5교시</td>
+                    <td></td>
+                    <td rowspan="3">논리 회로</td>
+                    <td></td>
+
+
+                </tr>
+                <tr>
+                    <td>6교시</td>
+                    <td></td>
+                    <td rowspan="2">웹프로그래밍</td>
+                    <td></td>
+                    <td rowspan="2">웹프로그래밍</td>
+
+
+                </tr>
+                <tr>
+                    <td>7교시</td>
+                    <td></td>
+                    <td></td>
+
+
+
+                </tr>
+                <tr>
+                    <td>8교시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9교시</td>
+                    <td>이산 수학</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+            </table>
+        </div>
     </body>
 </html>
